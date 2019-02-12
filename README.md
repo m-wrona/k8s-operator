@@ -36,6 +36,12 @@ operator-sdk build m-wrona/k8s-memcached-operator
 docker push m-wrona/k8s-memcached-operator
 ```
 
+#### Kubernetes
+
+```bash
+kubectl create -f deploy/crds/cache_v1alpha1_memcached_crd.yaml
+```
+
 # Doc
 
 * [Operator overview](https://coreos.com/operators/)
