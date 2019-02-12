@@ -7,8 +7,8 @@ import (
 	"os"
 	"runtime"
 
-	"github.com/m-wrona/k8s-operator/memcached-operator/pkg/apis"
-	"github.com/m-wrona/k8s-operator/memcached-operator/pkg/controller"
+	"github.com/m-wrona/k8s-operator/pkg/apis"
+	"github.com/m-wrona/k8s-operator/pkg/controller"
 
 	"github.com/operator-framework/operator-sdk/pkg/k8sutil"
 	"github.com/operator-framework/operator-sdk/pkg/leader"

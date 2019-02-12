@@ -15,8 +15,7 @@ spec:
       serviceAccountName: memcached-operator
       containers:
         - name: memcached-operator
-          # Replace this with the built image name
-          image: REPLACE_IMAGE
+          image: mwrona/k8s-memcached-operator:v0.0.1
           command:
           - memcached-operator
           imagePullPolicy: Always

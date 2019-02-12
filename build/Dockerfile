@@ -5,7 +5,7 @@ ENV OPERATOR=/usr/local/bin/memcached-operator \
     USER_NAME=memcached-operator
 
 # install operator binary
-COPY build/_output/bin/memcached-operator ${OPERATOR}
+COPY build/_output/bin/k8s-operator ${OPERATOR}
 
 COPY build/bin /usr/local/bin
 RUN  /usr/local/bin/user_setup

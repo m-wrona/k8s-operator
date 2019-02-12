@@ -14,6 +14,20 @@ Pre-requisites:
 
 # Development
 
+#### Local development
+
+1) Set the name of the operator in an environment variable
+
+```bash
+export OPERATOR_NAME=memcached-operator
+```
+
+2) Run locally
+
+```bash
+operator-sdk up local --namespace=default
+```
+
 #### Build
 
 1) Regenerate K8s related code
@@ -27,19 +41,37 @@ operator-sdk generate k8s
 1) Docker build
 
 ```bash
-operator-sdk build m-wrona/k8s-memcached-operator
+operator-sdk build mwrona/k8s-memcached-operator:v0.0.1
 ```
 
 2) Docker push
 
 ```bash
-docker push m-wrona/k8s-memcached-operator
+docker push mwrona/k8s-memcached-operator:v0.0.1
 ```
 
 #### Kubernetes
 
+1) Deploy K8s operator
+
 ```bash
 kubectl create -f deploy/crds/cache_v1alpha1_memcached_crd.yaml
+kubectl create -f deploy/service_account.yaml
+kubectl create -f deploy/role.yaml
+kubectl create -f deploy/role_binding.yaml
+kubectl create -f deploy/operator.yaml
+```
+
+2) Create mem-cached
+
+```bash
+kubectl apply -f deploy/crds/cache_v1alpha1_memcached_cr.yaml
+```
+
+3) Check mem-cached status
+
+```bash
+kubectl get memcached/example-memcached -o yaml
 ```
 
 # Doc
