@@ -14,6 +14,14 @@ Pre-requisites:
 
 # Development
 
+#### Build
+
+1) Regenerate K8s related code
+
+```bash
+operator-sdk generate k8s
+``` 
+
 #### Docker
 
 1) Docker build
